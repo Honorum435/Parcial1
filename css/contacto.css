@@ -53,6 +53,19 @@
     align-self: flex-start;
 }
 
+/* contador de caracteres del textarea */
+.msg-contador {
+    font-size: 0.82rem;
+    color: var(--texto-tenue);
+    text-align: right;
+    margin-top: -10px;
+}
+
+.msg-contador.contador-limite {
+    color: var(--rojo-claro);
+    font-weight: bold;
+}
+
 #redes {
     text-align: center;
 }
