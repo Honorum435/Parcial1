@@ -9,10 +9,16 @@
     <link rel="stylesheet" href="css/error.css">
 </head>
 <body>
+<a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <header>
+        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menú">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
         <h1 class="fade-in">Kimetsu no Yaiba - El Castillo Infinito<span class="kanji">鬼滅の刃</span></h1>
-        <nav>
-            <ul>
+        <nav aria-label="Navegación principal">
+            <ul id="nav-lista">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="pages/sobre-la-pelicula.html">Sobre la Película</a></li>
                 <li><a href="pages/characters.html">Personajes</a></li>
@@ -23,7 +29,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="contenido-principal">
         <section class="musica-ambiente fade-in">
             <p>Música de ambiente:</p>
             <audio controls loop preload="none">
@@ -41,5 +47,7 @@
     <footer>
         <p>&copy; 2026 Kimetsu no Yaiba - El Castillo Infinito. Todos los derechos reservados.</p>
     </footer>
+    <button id="volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio de la página">↑</button>
+    <script src="js/main.js"></script>
 </body>
 </html>
