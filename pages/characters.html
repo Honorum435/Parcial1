@@ -11,16 +11,17 @@
 <body>
 <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <header>
-        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menú">
+        <input type="checkbox" id="menu-check" class="menu-check">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir o cerrar menú">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
-        </button>
+        </label>
         <nav aria-label="Navegación principal">
             <ul id="nav-lista">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="sobre-la-pelicula.html">Sobre la Película</a></li>
-                <li><a href="characters.html">Personajes</a></li>
+                <li><a href="characters.html" class="nav-activo">Personajes</a></li>
                 <li><a href="reparto.html">Reparto</a></li>
                 <li><a href="produccion.html">Producción</a></li>
                 <li><a href="curiosidades.html">Curiosidades y Premios</a></li>
@@ -39,44 +40,50 @@
         <h1 class="fade-in">Personajes Principales</h1>
         <section class="grid-personajes" aria-label="Lista de personajes principales">
             <article id="tanjiro" class="card card--accent fade-in-up">
+                <span class="badge">Protagonista</span>
                 <h2>Tanjiro Kamado</h2>
-                <p>El protagonista de la historia, un joven amable y valiente que se convierte en cazador de demonios para salvar a su hermana Nezuko.</p>
+                <p>Un joven amable y valiente que se convierte en cazador de demonios para salvar a su hermana Nezuko. Domina la Respiración del Agua y luego la del Sol.</p>
             </article>
             <article id="nezuko" class="card card--accent fade-in-up delay-1">
+                <span class="badge badge--rojo">Demonio aliado</span>
                 <h2>Nezuko Kamado</h2>
-                <p>La hermana menor de Tanjiro, convertida en demonio pero aún conserva su humanidad y protege a su hermano.</p>
+                <p>La hermana menor de Tanjiro, transformada en demonio. Contra todo pronóstico conserva su humanidad y lucha junto a su hermano para proteger a los inocentes.</p>
             </article>
             <article id="zenitsu" class="card card--accent fade-in-up delay-2">
+                <span class="badge">Cazador de demonios</span>
                 <h2>Zenitsu Agatsuma</h2>
-                <p>Un cazador de demonios cobarde pero poderoso, conocido por su habilidad con el rayo.</p>
+                <p>Aparenta ser cobarde, pero al dormirse desata un poder devastador con su técnica del Trueno. Uno de los compañeros más leales de Tanjiro.</p>
             </article>
             <article id="inosuke" class="card card--accent fade-in-up delay-3">
+                <span class="badge">Cazador de demonios</span>
                 <h2>Inosuke Hashibira</h2>
-                <p>Un cazador de demonios salvaje y agresivo, criado por jabalíes, que lucha con dos espadas.</p>
+                <p>Criado por jabalíes, es salvaje e impulsivo pero increíblemente fuerte. Lucha con dos katanas dentadas y su técnica de la Respiración de la Bestia.</p>
             </article>
             <article id="kanao" class="card card--accent fade-in-up delay-4">
+                <span class="badge">Cazador de demonios</span>
                 <h2>Kanao Tsuyuri</h2>
-                <p>Una cazadora de demonios tranquila y reservada, entrenada por Shinobu Kocho, con habilidades excepcionales.</p>
+                <p>Discípula de Shinobu Kocho, con reflejos y visión sobrehumanos. Su técnica de la Respiración de las Flores la hace una de las cazadoras más hábiles.</p>
             </article>
             <article id="shinobu" class="card card--accent fade-in-up delay-5">
+                <span class="badge badge--rojo">Pilar del Insecto</span>
                 <h2>Shinobu Kocho</h2>
-                <p>Una cazadora de demonios experta en venenos, conocida por su sonrisa constante y su actitud calmada.</p>
+                <p>La única cazadora que no puede decapitar demonios sola, por eso desarrolló venenos letales. Su sonrisa amable esconde una determinación de hierro.</p>
             </article>
             <article id="giyu" class="card card--accent fade-in-up">
+                <span class="badge badge--rojo">Pilar del Agua</span>
                 <h2>Giyu Tomioka</h2>
-                <p>Un cazador de demonios serio y reservado, conocido por su habilidad con el agua y su papel como mentor de Tanjiro.</p>
+                <p>Serio y reservado, fue el primero en ver el potencial de Tanjiro. Su Undécima Forma del Agua es una técnica que él mismo creó.</p>
             </article>
             <article id="sanemi" class="card card--accent fade-in-up delay-1">
+                <span class="badge badge--rojo">Pilar del Viento</span>
                 <h2>Sanemi Shinazugawa</h2>
-                <p>Un cazador de demonios impulsivo y agresivo, conocido por su habilidad con el viento y su papel como Pilar del Viento.</p>
+                <p>El más agresivo e impulsivo de los Pilares. Su sangre es tan potente que atrae y aturde a los demonios, lo que lo convierte en un adversario único.</p>
             </article>
         </section>
-        <p class="mas-personajes">Y más personajes...</p>
+        <p class="mas-personajes">Y muchos personajes más en la historia...</p>
     </main>
     <footer>
         <p>&copy; 2026 Kimetsu no Yaiba - El Castillo Infinito. Todos los derechos reservados.</p>
     </footer>
-    <button id="volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio de la página">↑</button>
-    <script src="../js/main.js"></script>
 </body>
 </html>

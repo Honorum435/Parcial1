@@ -11,15 +11,16 @@
 <body>
 <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <header>
-        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menú">
+        <input type="checkbox" id="menu-check" class="menu-check">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir o cerrar menú">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
-        </button>
+        </label>
         <h1 class="fade-in">Kimetsu no Yaiba - El Castillo Infinito<span class="kanji">鬼滅の刃</span></h1>
         <nav aria-label="Navegación principal">
             <ul id="nav-lista">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" class="nav-activo">Inicio</a></li>
                 <li><a href="pages/sobre-la-pelicula.html">Sobre la Película</a></li>
                 <li><a href="pages/characters.html">Personajes</a></li>
                 <li><a href="pages/reparto.html">Reparto</a></li>
@@ -32,7 +33,7 @@
     <main id="contenido-principal">
         <section id="hero" class="card fade-in-up">
             <figure>
-                <img src="img/Kimetsu-no-yaiba.webp" alt="Póster de Kimetsu no Yaiba El Castillo Infinito">
+                <img src="img/Kimetsu-no-yaiba.webp" alt="Póster oficial de Kimetsu no Yaiba: El Castillo Infinito">
                 <figcaption>Póster oficial de la película.</figcaption>
             </figure>
             <div class="hero-texto">
@@ -61,21 +62,52 @@
 
         <section id="sinopsis" class="card fade-in-up delay-2">
             <h2>Sinopsis</h2>
-            <p>La historia sigue a Tanjiro Kamado, un joven que se convierte en cazador de demonios después de que su familia es asesinada por demonios y su hermana Nezuko se convierte en uno de ellos. En esta película, Tanjiro y sus amigos enfrentan nuevos desafíos y enemigos en su lucha por proteger a la humanidad.</p>
+            <p>La historia sigue a Tanjiro Kamado, un joven que se convierte en cazador de demonios después de que su familia es asesinada y su hermana Nezuko se transforma en demonio. En esta película, Tanjiro y los Pilares son arrastrados al Castillo Infinito de Muzan Kibutsuji para el enfrentamiento definitivo contra las Lunas Superiores y el propio Muzan.</p>
         </section>
 
         <section id="ficha-tecnica" class="card fade-in-up delay-3">
             <h2>Ficha Técnica</h2>
             <div class="ficha">
-                <p class="boxed"><strong>Director:</strong> Haruo Sotozaki</p>
-                <p class="boxed"><strong>Guion:</strong> Ufotable</p>
-                <p class="boxed"><strong>Música:</strong> Yuki Kajiura</p>
-                <p class="boxed"><strong>Estudio:</strong> Ufotable</p>
-                <p class="boxed"><strong>Duración:</strong> 117 minutos</p>
+                <dl>
+                    <dt>Director</dt>
+                    <dd>Haruo Sotozaki</dd>
+                    <dt>Guion</dt>
+                    <dd>Ufotable</dd>
+                    <dt>Música</dt>
+                    <dd>Yuki Kajiura y Go Shiina</dd>
+                    <dt>Estudio</dt>
+                    <dd>Ufotable</dd>
+                    <dt>Duración</dt>
+                    <dd>117 minutos</dd>
+                    <dt>Estreno</dt>
+                    <dd><time datetime="2024">2024 — Japón</time></dd>
+                </dl>
             </div>
         </section>
 
-        <section id="explorar" class="card fade-in-up delay-4">
+        <section id="en-numeros" class="card fade-in-up delay-4">
+            <h2>En números</h2>
+            <div class="estadisticas">
+                <div class="stat">
+                    <span class="stat-numero">220M+</span>
+                    <span class="stat-label">copias del manga vendidas en todo el mundo</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-numero">#1</span>
+                    <span class="stat-label">taquilla histórica de Japón con Mugen Train</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-numero">117</span>
+                    <span class="stat-label">minutos de duración de la película</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-numero">47</span>
+                    <span class="stat-label">capítulos del arco del Castillo Infinito</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="explorar" class="card fade-in-up delay-5">
             <h2>Explorá el sitio</h2>
             <div class="enlaces-grid">
                 <a class="enlace-card" href="pages/sobre-la-pelicula.html">
@@ -108,7 +140,5 @@
     <footer>
         <p>&copy; 2026 Kimetsu no Yaiba - El Castillo Infinito. Todos los derechos reservados.</p>
     </footer>
-    <button id="volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio de la página">↑</button>
-    <script src="js/main.js"></script>
 </body>
 </html>

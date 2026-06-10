@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe — Kimetsu no Yaiba</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f0f0f0;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+            color: #111;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
+        }
+
+        /* cada pagina es un "pantalla" del wireframe */
+        .pantallas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pantalla {
+            background: #fff;
+            border: 2px solid #bbb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .pantalla-titulo {
+            background: #ddd;
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #444;
+            border-bottom: 1px solid #bbb;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* zonas genericas del wireframe */
+        .wf-header {
+            background: #c8c8c8;
+            padding: 14px 16px;
+            border-bottom: 2px solid #999;
+        }
+
+        .wf-titulo-sitio {
+            background: #aaa;
+            height: 22px;
+            border-radius: 3px;
+            width: 70%;
+            margin: 0 auto 10px;
+        }
+
+        .wf-nav {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .wf-nav-item {
+            background: #fff;
+            border: 1px solid #888;
+            border-radius: 3px;
+            height: 18px;
+            width: 70px;
+        }
+
+        .wf-nav-item.activo {
+            background: #888;
+        }
+
+        .wf-main {
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* bloque generico */
+        .wf-bloque {
+            border: 1px dashed #bbb;
+            border-radius: 4px;
+            padding: 10px 12px;
+            background: #f7f7f7;
+        }
+
+        .wf-bloque-label {
+            font-size: 0.68rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        /* lineas de texto placeholder */
+        .wf-linea {
+            background: #ddd;
+            height: 9px;
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+
+        .wf-linea:last-child { margin-bottom: 0; }
+        .wf-linea.corta { width: 60%; }
+        .wf-linea.media { width: 80%; }
+
+        /* imagen placeholder */
+        .wf-imagen {
+            background: #ddd;
+            border: 1px solid #bbb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.75rem;
+        }
+
+        /* hero: imagen + texto lado a lado */
+        .wf-hero {
+            display: flex;
+            gap: 10px;
+        }
+
+        .wf-hero .wf-imagen {
+            flex: 0 0 90px;
+            height: 120px;
+        }
+
+        .wf-hero .wf-hero-texto {
+            flex: 1;
+        }
+
+        /* video embed */
+        .wf-video {
+            background: #ccc;
+            height: 90px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-size: 0.75rem;
+        }
+
+        /* boton placeholder */
+        .wf-btn {
+            display: inline-block;
+            background: #bbb;
+            border-radius: 4px;
+            height: 24px;
+            width: 100px;
+            margin-top: 6px;
+        }
+
+        .wf-btn.rojo {
+            background: #d8a0a0;
+        }
+
+        /* grid de tarjetas */
+        .wf-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .wf-card {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-left: 3px solid #aaa;
+            border-radius: 3px;
+            padding: 7px 8px;
+        }
+
+        /* ficha tecnica dl */
+        .wf-ficha {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 4px;
+        }
+
+        .wf-ficha-dt {
+            background: #bbb;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        .wf-ficha-dd {
+            background: #ddd;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        /* estadisticas */
+        .wf-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        .wf-stat {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-top: 3px solid #aaa;
+            border-radius: 3px;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .wf-stat-num {
+            background: #bbb;
+            height: 16px;
+            border-radius: 3px;
+            margin-bottom: 4px;
+        }
+
+        .wf-stat-label {
+            background: #ddd;
+            height: 8px;
+            border-radius: 2px;
+        }
+
+        /* formulario */
+        .wf-form {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .wf-input {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            height: 22px;
+        }
+
+        .wf-textarea {
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            height: 50px;
+        }
+
+        /* footer */
+        .wf-footer {
+            background: #c8c8c8;
+            padding: 10px;
+            text-align: center;
+            border-top: 2px solid #999;
+            margin-top: auto;
+        }
+
+        .wf-footer-text {
+            background: #aaa;
+            height: 10px;
+            border-radius: 3px;
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        /* leyenda */
+        .leyenda {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding: 16px 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .leyenda h2 {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .leyenda ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .leyenda li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #555;
+        }
+
+        .leyenda .muestra {
+            width: 20px;
+            height: 14px;
+            border-radius: 2px;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Wireframe en baja — Kimetsu no Yaiba: El Castillo Infinito</h1>
+    <p class="subtitulo">Boceto de interfaz de las páginas principales del sitio</p>
+
+    <div class="pantallas">
+
+        <!-- INICIO -->
+        <div class="pantalla">
+            <div class="pantalla-titulo">Página: Inicio (index.html)</div>
+            <div class="wf-header">
+                <div class="wf-titulo-sitio"></div>
+                <div class="wf-nav">
+                    <div class="wf-nav-item activo"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                </div>
+            </div>
+            <div class="wf-main">
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Hero — póster + texto + audio</div>
+                    <div class="wf-hero">
+                        <div class="wf-imagen">Póster</div>
+                        <div class="wf-hero-texto">
+                            <div class="wf-linea media"></div>
+                            <div class="wf-linea"></div>
+                            <div class="wf-linea corta"></div>
+                            <div class="wf-btn rojo"></div>
+                            <div style="margin-top:8px; background:#ddd; height:22px; border-radius:3px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Tráiler oficial (iframe YouTube)</div>
+                    <div class="wf-video">▶ YouTube embed</div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Sinopsis</div>
+                    <div class="wf-linea"></div>
+                    <div class="wf-linea"></div>
+                    <div class="wf-linea media"></div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Ficha Técnica (dl/dt/dd)</div>
+                    <div class="wf-ficha">
+                        <div class="wf-ficha-dt"></div><div class="wf-ficha-dd"></div>
+                        <div class="wf-ficha-dt"></div><div class="wf-ficha-dd"></div>
+                        <div class="wf-ficha-dt"></div><div class="wf-ficha-dd"></div>
+                        <div class="wf-ficha-dt"></div><div class="wf-ficha-dd"></div>
+                    </div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">En Números (grid de estadísticas)</div>
+                    <div class="wf-stats">
+                        <div class="wf-stat"><div class="wf-stat-num"></div><div class="wf-stat-label"></div></div>
+                        <div class="wf-stat"><div class="wf-stat-num"></div><div class="wf-stat-label"></div></div>
+                        <div class="wf-stat"><div class="wf-stat-num"></div><div class="wf-stat-label"></div></div>
+                        <div class="wf-stat"><div class="wf-stat-num"></div><div class="wf-stat-label"></div></div>
+                    </div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Explorá el sitio (grid de enlaces)</div>
+                    <div class="wf-grid">
+                        <div class="wf-card"><div class="wf-linea corta"></div><div class="wf-linea media"></div></div>
+                        <div class="wf-card"><div class="wf-linea corta"></div><div class="wf-linea media"></div></div>
+                        <div class="wf-card"><div class="wf-linea corta"></div><div class="wf-linea media"></div></div>
+                        <div class="wf-card"><div class="wf-linea corta"></div><div class="wf-linea media"></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-footer"><div class="wf-footer-text"></div></div>
+        </div>
+
+        <!-- PERSONAJES -->
+        <div class="pantalla">
+            <div class="pantalla-titulo">Página: Personajes (characters.html)</div>
+            <div class="wf-header">
+                <div class="wf-nav">
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item activo"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                </div>
+            </div>
+            <div class="wf-main">
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Barra de música ambiente</div>
+                    <div style="background:#ddd; height:22px; border-radius:3px;"></div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Título h1 — Personajes Principales</div>
+                    <div class="wf-linea corta" style="height:16px;"></div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Grid de personajes (article × 8)</div>
+                    <div class="wf-grid" style="grid-template-columns: 1fr 1fr;">
+                        <div class="wf-card">
+                            <div style="background:#bbb; height:14px; width:60px; border-radius:10px; margin-bottom:5px;"></div>
+                            <div class="wf-linea corta"></div>
+                            <div class="wf-linea"></div>
+                            <div class="wf-linea media"></div>
+                        </div>
+                        <div class="wf-card">
+                            <div style="background:#c8a0a0; height:14px; width:70px; border-radius:10px; margin-bottom:5px;"></div>
+                            <div class="wf-linea corta"></div>
+                            <div class="wf-linea"></div>
+                            <div class="wf-linea media"></div>
+                        </div>
+                        <div class="wf-card">
+                            <div style="background:#bbb; height:14px; width:60px; border-radius:10px; margin-bottom:5px;"></div>
+                            <div class="wf-linea corta"></div>
+                            <div class="wf-linea"></div>
+                        </div>
+                        <div class="wf-card">
+                            <div style="background:#bbb; height:14px; width:60px; border-radius:10px; margin-bottom:5px;"></div>
+                            <div class="wf-linea corta"></div>
+                            <div class="wf-linea"></div>
+                        </div>
+                    </div>
+                    <p style="font-size:0.7rem; color:#999; text-align:center; margin-top:6px;">+ 4 tarjetas más...</p>
+                </div>
+            </div>
+            <div class="wf-footer"><div class="wf-footer-text"></div></div>
+        </div>
+
+        <!-- CONTACTO -->
+        <div class="pantalla">
+            <div class="pantalla-titulo">Página: Contacto (contacto.html)</div>
+            <div class="wf-header">
+                <div class="wf-nav">
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item"></div>
+                    <div class="wf-nav-item activo"></div>
+                </div>
+            </div>
+            <div class="wf-main">
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Barra de música ambiente</div>
+                    <div style="background:#ddd; height:22px; border-radius:3px;"></div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Formulario de contacto</div>
+                    <div class="wf-form">
+                        <div>
+                            <div class="wf-linea corta" style="margin-bottom:4px;"></div>
+                            <div class="wf-input"></div>
+                        </div>
+                        <div>
+                            <div class="wf-linea corta" style="margin-bottom:4px;"></div>
+                            <div class="wf-input"></div>
+                        </div>
+                        <div>
+                            <div class="wf-linea corta" style="margin-bottom:4px;"></div>
+                            <div class="wf-input"></div>
+                        </div>
+                        <div>
+                            <div class="wf-linea corta" style="margin-bottom:4px;"></div>
+                            <div class="wf-textarea"></div>
+                        </div>
+                        <div class="wf-btn rojo"></div>
+                    </div>
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Redes sociales (botones)</div>
+                    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-top:4px;">
+                        <div class="wf-btn"></div>
+                        <div class="wf-btn"></div>
+                        <div class="wf-btn"></div>
+                        <div class="wf-btn"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wf-footer"><div class="wf-footer-text"></div></div>
+        </div>
+
+        <!-- MOBILE: menu cerrado -->
+        <div class="pantalla">
+            <div class="pantalla-titulo">Vista Mobile — Menú hamburguesa (CSS only)</div>
+            <div class="wf-header" style="position:relative; padding:14px;">
+                <div class="wf-titulo-sitio" style="width:60%; margin-bottom:0;"></div>
+                <div style="position:absolute; top:14px; right:14px; display:flex; flex-direction:column; gap:4px; padding:6px 8px; border:1px solid #888; border-radius:4px; background:#fff;">
+                    <div style="width:18px; height:2px; background:#888; border-radius:1px;"></div>
+                    <div style="width:18px; height:2px; background:#888; border-radius:1px;"></div>
+                    <div style="width:18px; height:2px; background:#888; border-radius:1px;"></div>
+                </div>
+            </div>
+            <div class="wf-main">
+                <div class="wf-bloque" style="text-align:center; color:#aaa; font-size:0.75rem;">
+                    Menú oculto. El usuario toca ☰ para abrirlo.
+                </div>
+                <div class="wf-bloque">
+                    <div class="wf-bloque-label">Contenido de la página</div>
+                    <div class="wf-linea"></div>
+                    <div class="wf-linea media"></div>
+                    <div class="wf-linea corta"></div>
+                </div>
+            </div>
+            <div class="wf-footer"><div class="wf-footer-text"></div></div>
+        </div>
+
+    </div>
+
+    <!-- leyenda de colores/formas usadas -->
+    <div class="leyenda">
+        <h2>Leyenda</h2>
+        <ul>
+            <li><div class="muestra" style="background:#c8c8c8;"></div> Header / Footer</li>
+            <li><div class="muestra" style="background:#888;"></div> Nav item activo</li>
+            <li><div class="muestra" style="background:#fff; border:1px solid #888;"></div> Nav item inactivo</li>
+            <li><div class="muestra" style="background:#ddd;"></div> Texto / Contenido</li>
+            <li><div class="muestra" style="background:#d8a0a0;"></div> Botón de acción principal</li>
+            <li><div class="muestra" style="background:#f7f7f7; border:1px dashed #bbb;"></div> Sección / Card</li>
+            <li><div class="muestra" style="background:#ccc;"></div> Embed de video</li>
+        </ul>
+    </div>
+</body>
+</html>

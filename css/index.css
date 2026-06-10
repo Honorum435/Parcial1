@@ -49,11 +49,8 @@
     max-width: 360px;
 }
 
-/* ficha tecnica en columnas */
+/* ficha tecnica — el dl/dt/dd lo maneja base.css */
 .ficha {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
     margin-top: 8px;
 }
 

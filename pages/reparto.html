@@ -11,17 +11,18 @@
 <body>
 <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <header>
-        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menú">
+        <input type="checkbox" id="menu-check" class="menu-check">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir o cerrar menú">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
-        </button>
+        </label>
         <nav aria-label="Navegación principal">
             <ul id="nav-lista">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="sobre-la-pelicula.html">Sobre la Película</a></li>
                 <li><a href="characters.html">Personajes</a></li>
-                <li><a href="reparto.html">Reparto</a></li>
+                <li><a href="reparto.html" class="nav-activo">Reparto</a></li>
                 <li><a href="produccion.html">Producción</a></li>
                 <li><a href="curiosidades.html">Curiosidades y Premios</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -39,14 +40,14 @@
         <section id="reparto" class="card fade-in-up">
             <h2>Reparto Principal</h2>
             <div class="lista-reparto">
-                <p class="boxed boxed--bordered">Tanjiro Kamado - Voz: Natsuki Hanae</p>
-                <p class="boxed boxed--bordered">Nezuko Kamado - Voz: Akari Kitō</p>
-                <p class="boxed boxed--bordered">Zenitsu Agatsuma - Voz: Hiro Shimono</p>
-                <p class="boxed boxed--bordered">Inosuke Hashibira - Voz: Yoshitsugu Matsuoka</p>
-                <p class="boxed boxed--bordered">Giyū Tomioka - Voz: Takahiro Sakurai</p>
-                <p class="boxed boxed--bordered">Shinobu Kocho - Voz: Saori Hayami</p>
-                <p class="boxed boxed--bordered">Kyojuro Rengoku - Voz: Satoshi Hino</p>
-                <p class="boxed boxed--bordered">Muzan Kibutsuji - Voz: Toshihiko Seki</p>
+                <p class="boxed boxed--bordered">Tanjiro Kamado — Voz: <strong>Natsuki Hanae</strong></p>
+                <p class="boxed boxed--bordered">Nezuko Kamado — Voz: <strong>Akari Kitō</strong></p>
+                <p class="boxed boxed--bordered">Zenitsu Agatsuma — Voz: <strong>Hiro Shimono</strong></p>
+                <p class="boxed boxed--bordered">Inosuke Hashibira — Voz: <strong>Yoshitsugu Matsuoka</strong></p>
+                <p class="boxed boxed--bordered">Giyū Tomioka — Voz: <strong>Takahiro Sakurai</strong></p>
+                <p class="boxed boxed--bordered">Shinobu Kocho — Voz: <strong>Saori Hayami</strong></p>
+                <p class="boxed boxed--bordered">Kyojuro Rengoku — Voz: <strong>Satoshi Hino</strong></p>
+                <p class="boxed boxed--bordered">Muzan Kibutsuji — Voz: <strong>Toshihiko Seki</strong></p>
             </div>
         </section>
         <section id="descripcion-reparto" class="card fade-in-up delay-1">
@@ -64,7 +65,5 @@
     <footer>
         <p>&copy; 2026 Kimetsu no Yaiba - El Castillo Infinito. Todos los derechos reservados.</p>
     </footer>
-    <button id="volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio de la página">↑</button>
-    <script src="../js/main.js"></script>
 </body>
 </html>
