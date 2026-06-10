@@ -11,11 +11,12 @@
 <body>
 <a href="#contenido-principal" class="skip-link">Saltar al contenido</a>
     <header>
-        <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-lista" aria-label="Abrir menú">
+        <input type="checkbox" id="menu-check" class="menu-check">
+        <label for="menu-check" class="menu-toggle" aria-label="Abrir o cerrar menú">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
-        </button>
+        </label>
         <nav aria-label="Navegación principal">
             <ul id="nav-lista">
                 <li><a href="../index.html">Inicio</a></li>
@@ -24,7 +25,7 @@
                 <li><a href="reparto.html">Reparto</a></li>
                 <li><a href="produccion.html">Producción</a></li>
                 <li><a href="curiosidades.html">Curiosidades y Premios</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.html" class="nav-activo">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -49,7 +50,5 @@
     <footer>
         <p>&copy; 2026 Kimetsu no Yaiba - El Castillo Infinito. Todos los derechos reservados.</p>
     </footer>
-    <button id="volver-arriba" class="btn-volver-arriba" aria-label="Volver al inicio de la página">↑</button>
-    <script src="../js/main.js"></script>
 </body>
 </html>
